@@ -12,7 +12,7 @@ app.use(express.json());
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "root",
+    password: "marenco09",
     database: "contactos_db"
 });
 
@@ -34,17 +34,17 @@ app.get("/", (req, res) => {
 // ✅ RUTA PARA GUARDAR DATOS
 app.post("/guardar", (req, res) => {
 
-    const { nombre, correo, mensaje } = req.body;
+    const { nombre, correo, telefono, mensaje } = req.body;
 
     console.log("Datos recibidos:", req.body);
 
-    if (!nombre || !correo || !mensaje) {
+    if (!nombre || !correo || !telefono || !mensaje) {
         return res.status(400).send("Datos incompletos");
     }
 
-    const sql = "INSERT INTO contactos (nombre, correo, mensaje) VALUES (?, ?, ?)";
+    const sql = "INSERT INTO contactos (nombre, correo, telefono, mensaje) VALUES (?, ?, ?, ?)";
 
-    db.query(sql, [nombre, correo, mensaje], (err, result) => {
+    db.query(sql, [nombre, correo, telefono, mensaje], (err, result) => {
         if (err) {
             console.error("Error SQL:", err);
             return res.status(500).send("Error en servidor");
