@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 });
 
 
-// ✅ RUTA PARA GUARDAR DATOS
+// RUTA PARA GUARDAR DATOS
 app.post("/guardar", (req, res) => {
 
     const { nombre, correo, telefono, mensaje } = req.body;
