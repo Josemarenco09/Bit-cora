@@ -5,13 +5,14 @@
     <meta name="description" content="Mi primera página Web" />
     <title>Mi Blog</title>
     <link rel="stylesheet" href="css/estilos.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> 
   </head>
 
   <body>
     <div class="agrupar">
       <!-- ENCABEZADO -->
       <header class="cabecera">
-        <h1>Mi Blog</h1>
+        <h1>TecnoHogar</h1>
       </header>
 
       <!-- MENÚ DE NAVEGACIÓN -->
@@ -24,82 +25,33 @@
       </nav>
 
       <!-- CONTENIDO PRINCIPAL -->
-      <section class="seccion">
-        <!-- ARTÍCULO 1 -->
-        <article>
-          <div class="titulos">
-            <h2>Título del primer artículo</h2>
-            <h3>Subtítulo del artículo</h3>
+
+      <main id="welcome_page">
+        <div class="container mt-3 mb-3">
+
+          <div class="row">
+
+            <div class="col-12">
+
+              <h1> TecnoHogar</h1>
+              <h2> Tenemos todo para tu hogar </h2>
+
+            </div>
+
           </div>
 
-          <time datetime="2020-04-07">
-            Publicado miércoles 7 de abril de 2020
-          </time>
+        </div>
 
-          <!-- IMAGEN -->
-          <img src="img/logo_sena.png" alt="Logo del SENA" />
-
-          <p>
-            Este es un ejemplo de contenido del artículo principal. Aquí se
-            explica información relevante del sitio.
-          </p>
-
-          <footer>
-            <p>Comentarios (0)</p>
-          </footer>
-
-          <!-- ENLACE EXTERNO -->
-          <a href="https://www.sena.edu.co" target="_blank"> Visitar SENA </a>
-
-          <!-- VIDEO -->
-          <video
-            src="video/video_guille.mp4"
-            controls
-            width="640"
-            height="480"
-          ></video>
-        </article>
-
-        <!-- ARTÍCULO 2 -->
-        <article>
-          <div class="titulos">
-            <h2>Título del segundo artículo</h2>
-            <h3>Subtítulo del artículo</h3>
-          </div>
-
-          <time datetime="2026-04-27">
-            Publicado lunes 27 de abril de 2026
-          </time>
-
-          <p class="green">
-            Segundo contenido del blog con información adicional.
-          </p>
-
-          <footer>
-            <p>Comentarios (10)</p>
-          </footer>
-
-          <a
-            href="http://oferta.senasofiaplus.edu.co/sofia-oferta/"
-            target="_blank"
-          >
-            Visitar Sofía Plus
-          </a>
-        </article>
-      </section>
-
-      <!-- BARRA LATERAL -->
-      <aside class="columna">
-        <blockquote>Mensaje 1</blockquote>
-
-        <blockquote>Mensaje 2</blockquote>
-      </aside>
+      </main>
 
       <!-- PIE DE PÁGINA -->
       <footer class="pie">
         Derechos reservados Guillermo Bejarano Reyes 2026
       </footer>
     </div>
+
+
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
   </body>
 </html>
