@@ -17,9 +17,9 @@ h2 {
    NORMALIZACIÓN HTML5
 ========================= */
 
-header, section, footer, aside, nav, article, hgroup {
+/* header, section, footer, aside, nav, article, hgroup {
   display: block;
-}
+} */
 
 
 /* =========================
@@ -27,13 +27,12 @@ header, section, footer, aside, nav, article, hgroup {
 ========================= */
 
 body {
+  font-family: 'Exo 2', sans-serif;
   text-align: center;
 }
 
 .agrupar {
-  width: 960px;
-  border: 10px solid black;
-  margin: 15px auto;
+  width: 100%;
 }
 
 
@@ -42,13 +41,21 @@ body {
 ========================= */
 
 .cabecera {
-  background: rgb(69, 69, 233);
+  background: rgb(215, 240, 165);
   border: 1px solid #999999;
   padding: 10px 5px;
 }
 
-.cabecera h1 {
-  text-align: left;
+#section_logo{
+  width: 500px;
+}
+
+#informacion_contacto{
+  text-align: right;
+}
+
+#imagen_logo{
+  width: 100%;
 }
 
 
@@ -57,7 +64,7 @@ body {
 ========================= */
 
 .menu {
-  background: #ccc;
+  background: white;
   padding: 1px;
   text-align: left;
 }
@@ -132,7 +139,7 @@ time {
 
 .pie {
   clear: both;
-  padding: 20px;
+  /* padding: 20px; */
   background: #2d3436;
   color: #fff;
 }
