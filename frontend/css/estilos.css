@@ -54,11 +54,19 @@ body {
 
 #informacion_contacto{
   text-align: right;
+  font-size: 10px;
 }
 
 #imagen_logo{
   width: 100%;
-  max-width: 200px;
+  max-width: 185px; 
+  margin: 0; 
+}
+
+#nombre_tienda{
+  font-size: 24px;
+  color: #00d4ff !important;
+  font-weight: 600;
 }
 
 
@@ -67,25 +75,23 @@ body {
 ========================= */
 
 .menu {
-  background: green;
-  padding: 1px;
-  text-align: left;
-}
-
-.menu li {
-  list-style: none;
-  padding: 5px;
-  font: bold 14px verdana;
-  display: inline-block;
+  background: #1a1a3e;
+  padding: 10px 20px;
+  border-top: 2px solid #00d4ff;  /* línea celeste de separación */
 }
 
 .menu a {
-  text-decoration: none;
-  color: black;
+  color: #ffffff;  /* blanco en vez de negro */
 }
 
 .menu a:hover {
-  color: rgb(69, 69, 233);
+  color: #00d4ff;  /* celeste al pasar el mouse */
+}
+
+.menu li{
+  text-align: left;
+  padding: 5px;
+  display: inline-block;
 }
 
 
@@ -143,18 +149,6 @@ time {
 .pie {
   clear: both;
   /* padding: 20px; */
-  background: #2d3436;
+  background: rgb(11, 16, 33);
   color: #fff;
 }
-
-
-/* =========================
-   IMÁGENES
-========================= */
-
-img {
-  width: 80px;
-  display: block;
-  margin: 20px auto;
-}
-
