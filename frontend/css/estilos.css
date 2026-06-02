@@ -1,3 +1,7 @@
+* {
+  font: small-caps bold 24px/1 sans-serif;
+}
+
 /* =========================
    TÍTULOS
 ========================= */
@@ -89,7 +93,7 @@ body {
 }
 
 .menu li{
-  text-align: left;
+  
   padding: 5px;
   display: inline-block;
 }
@@ -99,49 +103,33 @@ body {
    CONTENIDO PRINCIPAL
 ========================= */
 
-.seccion {
+#welcome_page{
+  padding-top: 60px;
+  margin-left: 20px;
+  margin: 0;
+}
+
+#image_welcome_page{
+  padding-left: 20px;
+  width: 90%;
+  max-width: 2600px;
+  padding-bottom: 80px;
+}
+
+#container_habilities{
+  border: black;
+}
+
+article{
+ border: 2px solid #00d4ff;
+  border-radius: 10px;      /* esquinas redondeadas */
   padding: 20px;
-  width: 600px;
-  float: left;
-  background-color: #558dbb;
+  width: 200px;
+  height: 200px;            /* igual al width para que sea cuadrado */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-article {
-  background: rgb(151, 243, 245);
-  border: 1px solid #999;
-  padding: 20px;
-  margin-bottom: 15px;
-}
-
-article footer {
-  text-align: right;
-  margin-top: 20px;
-}
-
-time {
-  color: #999;
-}
-
-
-/* =========================
-   BARRA LATERAL
-========================= */
-
-.columna {
-  width: 300px;
-  float: left;
-  margin: 5px 0;
-  background-color: #558dbb;
-}
-
-.columna blockquote {
-  border: 1px solid black;
-  padding: 40px;
-  background: rgb(151, 243, 245);
-  margin-bottom: 60px;
-}
-
-
 /* =========================
    PIE DE PÁGINA
 ========================= */
