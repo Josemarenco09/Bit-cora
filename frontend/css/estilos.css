@@ -1,20 +1,14 @@
-* {
-  font: small-caps bold 24px/1 sans-serif;
-}
-
 /* =========================
    TÍTULOS
 ========================= */
 
 h1 {
   font-size: 20px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: bold;
   color: white !important;
 }
 
 h2 {
-  font: bold 14px sans-serif;
   color: white !important;
 }
 
@@ -48,7 +42,6 @@ body {
 
 .cabecera {
   background: rgb(11, 16, 33);
-  border: 1px solid #999999;
   padding: 10px 5px;
 }
 
@@ -58,7 +51,7 @@ body {
 
 #informacion_contacto{
   text-align: right;
-  font-size: 10px;
+  font-size: 20px !important;
 }
 
 #imagen_logo{
@@ -100,36 +93,81 @@ body {
 
 
 /* =========================
-   CONTENIDO PRINCIPAL
+   HERO BANNER
 ========================= */
-
-#welcome_page{
-  padding-top: 60px;
-  margin-left: 20px;
-  margin: 0;
+#image_welcome_page {
+  width: 100%;
+  background-image: url('img/tecnohogar_welcome_banner.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
 }
 
-#image_welcome_page{
-  padding-left: 20px;
-  width: 90%;
-  max-width: 2600px;
-  padding-bottom: 80px;
+#hero_title {
+  font-size: 52px !important;
+  font-weight: 800;
+  color: white !important;
+  text-align: left;
 }
 
-#container_habilities{
-  border: black;
+#hero_subtitle {
+  font-size: 22px;
+  color: #00d4ff;
+  font-weight: 600;
+  text-align: left;
 }
 
-article{
- border: 2px solid #00d4ff;
-  border-radius: 10px;      /* esquinas redondeadas */
+#hero_desc {
+  font-size: 16px;
+  color: #cccccc;
+  text-align: left;
+}
+
+#hero_btn {
+  background-color: #00d4ff;
+  color: #0b1021;
+  font-weight: 700;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+#hero_btn:hover {
+  background-color: #00b8d9;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+#container_habilities {
+  background-color: #0b1021;
+  padding: 60px 20px;
+}
+
+article {
+  border: 2px solid #00d4ff;
+  border-radius: 12px;
   padding: 20px;
   width: 200px;
-  height: 200px;            /* igual al width para que sea cuadrado */
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #1a1a3e;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+
+article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #00d4ff55;
+}
+
 /* =========================
    PIE DE PÁGINA
 ========================= */
