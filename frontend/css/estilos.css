@@ -188,6 +188,31 @@ input:hover{
 }
 
 /* =========================
+   PREGUNTAS FRECUENTES
+========================= */
+
+#pregunta{
+  background: #1a1a3e !important;
+
+}
+
+summary{
+  background-color: #1a1a3e;
+  color: white;
+  font-size: 30px;
+}
+
+summary:hover{
+  background-color: blue;
+}
+
+.texto_ayuda{
+  font-size: 30px;
+}
+
+
+
+/* =========================
    PIE DE PÁGINA
 ========================= */
 
