@@ -56,7 +56,7 @@ body {
 
 #imagen_logo{
   width: 100%;
-  max-width: 185px; 
+  max-width: 300px; 
   margin: 0; 
 }
 
@@ -97,7 +97,6 @@ body {
 ========================= */
 #image_welcome_page {
   width: 100%;
-  background-image: url('img/tecnohogar_welcome_banner.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -147,7 +146,7 @@ body {
   padding: 60px 20px;
 }
 
-article {
+.cuadro_index {
   border: 2px solid #00d4ff;
   border-radius: 12px;
   padding: 20px;
@@ -163,9 +162,29 @@ article {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-article:hover {
+#cuadro_index:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 20px #00d4ff55;
+}
+
+/* =========================
+   FORMULARIO
+========================= */
+
+.seccion{
+  margin: 50px;
+  background: #1a1a3e;
+  text-align: center;
+  color: white;
+}
+
+input:hover{
+  background: rgb(86, 86, 86);
+}
+
+.button{
+  background: #1a1a3e;
+  color: blue;
 }
 
 /* =========================
