@@ -28,7 +28,7 @@ h2 {
 
 body {
   font-family: 'Exo 2', sans-serif;
-  text-align: center;
+
 }
 
 .agrupar {
@@ -178,22 +178,42 @@ body {
   color: white;
 }
 
-input:hover{
-  background: rgb(86, 86, 86);
-}
-
 .button{
   background: #1a1a3e;
-  color: blue;
+  color: white;
+}
+
+.button:hover{
+  color: #00b8d9;
 }
 
 /* =========================
    PREGUNTAS FRECUENTES
 ========================= */
+.seccion_ayuda {
+  background-color: white;
+  padding: 40px 0;
+}
 
-#pregunta{
-  background: #1a1a3e !important;
+.titulo_seccion {
+  color: white !important;
+  font-size: 26px !important;
+  font-weight: 700;
+  background-color: #1a1a3e;
+  padding: 15px 20px;
+  margin: 0 0 5px 0;
+  width: 100%;
+}
 
+.cuadro_pregunta summary {
+  background-color: #1a1a3e;
+  color: #00d4ff;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 15px 20px;
+  cursor: pointer;
+  width: 100%;
+  display: block;
 }
 
 summary{
@@ -202,12 +222,17 @@ summary{
   font-size: 30px;
 }
 
-summary:hover{
-  background-color: blue;
+.cuadro_pregunta summary:hover {
+  background-color: #0b1021;
 }
 
-.texto_ayuda{
-  font-size: 30px;
+.texto_ayuda {
+  font-size: 16px;
+  color: #cccccc;
+  background-color: #0b1021;
+  padding: 15px 25px;
+  margin: 0;
+  border-left: 3px solid #00d4ff;
 }
 
 
