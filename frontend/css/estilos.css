@@ -5,7 +5,8 @@
 h1 {
   font-size: 20px;
   font-weight: bold;
-  color: white !important;
+  color: black;
+  align-content: center;
 }
 
 h2 {
@@ -35,6 +36,9 @@ body {
   width: 100%;
 }
 
+p {
+  align-content: center;
+}
 
 /* =========================
    CABECERA
@@ -139,8 +143,41 @@ body {
 }
 
 /* =========================
+   PRODUCTS INDEX
+========================= */
+
+#previus_products{
+  margin: 70px;
+}
+
+.image_product {
+  width: 200px;
+  height: 100px;
+}
+
+.box_product{
+  border: 2px solid #00d4ff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+  white-space: normal;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+/* =========================
    TARJETAS
 ========================= */
+
 #container_habilities {
   background-color: #0b1021;
   padding: 60px 20px;
@@ -165,26 +202,6 @@ body {
 #cuadro_index:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 20px #00d4ff55;
-}
-
-/* =========================
-   FORMULARIO
-========================= */
-
-.seccion{
-  margin: 50px;
-  background: #1a1a3e;
-  text-align: center;
-  color: white;
-}
-
-.button{
-  background: #1a1a3e;
-  color: white;
-}
-
-.button:hover{
-  color: #00b8d9;
 }
 
 /* =========================
@@ -235,6 +252,34 @@ summary{
   border-left: 3px solid #00d4ff;
 }
 
+.cuadro_pregunta summary::before {
+  content: '▶ ';
+  font-size: 12px;
+}
+
+details[open] summary::before {
+  content: '▼ ';
+}
+
+/* =========================
+   FORMULARIO
+========================= */
+
+.seccion{
+  margin: 50px;
+  background: #1a1a3e;
+  text-align: center;
+  color: white;
+}
+
+.button{
+  background: #1a1a3e;
+  color: white;
+}
+
+.button:hover{
+  color: #00b8d9;
+}
 
 
 /* =========================

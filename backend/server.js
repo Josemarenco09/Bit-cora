@@ -55,6 +55,24 @@ app.post("/guardar", (req, res) => {
     });
 });
 
+const db_product = mysql2.createPool({
+    host: '127.0.0.1',
+    user: 'root',
+    password: 'marenco09',
+    database: 'productos'
+})
+
+app.get("/productos", (req, res) => {
+    const sql = "SELECT * FROM productos_tienda"
+
+    db.query(sql, (err, result) => {
+        if (err) {
+            console.log("Error: ", error.message)
+            return
+        }
+        res.json(result)
+    })
+})
 
 // Iniciar servidor
 app.listen(3000, () => {
