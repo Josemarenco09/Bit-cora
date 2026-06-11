@@ -55,7 +55,7 @@ app.post("/guardar", (req, res) => {
     });
 });
 
-const db_product = mysql2.createPool({
+const db_product = mysql.createPool({
     host: '127.0.0.1',
     user: 'root',
     password: 'marenco09',
@@ -63,9 +63,9 @@ const db_product = mysql2.createPool({
 })
 
 app.get("/productos", (req, res) => {
-    const sql = "SELECT * FROM productos_tienda"
+    const sql_product = "SELECT * FROM productos_tienda"
 
-    db.query(sql, (err, result) => {
+    db_product.query(sql_product, (err, result) => {
         if (err) {
             console.log("Error: ", error.message)
             return
@@ -76,5 +76,5 @@ app.get("/productos", (req, res) => {
 
 // Iniciar servidor
 app.listen(3000, () => {
-    console.log("Servidor en http://localhost:3000");
+    console.log("Servidor en http://localhost:3000 de productos");
 });
