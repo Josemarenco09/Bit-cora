@@ -119,6 +119,80 @@ app.get("/productos", (req, res) => {
     })
 })
 
+// RUTA PARA AGREGAR PRODUCTOS
+app.post("/productos", (req, res) => {
+    const { name_product, description_product, price_product, img } = req.body;
+
+    if (!name_product || !description_product || !price_product || !img) {
+        return res.status(400).json({ message: "Todos los campos son obligatorios" });
+    }
+
+    const sql_product = `
+        INSERT INTO productos_tienda (name_product, description_product, price_product, img)
+        VALUES (?, ?, ?, ?)
+    `;
+
+    db_product.query(sql_product, [name_product, description_product, price_product, img], (err, result) => {
+        if (err) {
+            console.log("Error: ", err.message);
+            return res.status(500).json({ message: "Error al agregar producto" });
+        }
+
+        res.json({
+            message: "Producto agregado correctamente",
+            id: result.insertId
+        });
+    });
+});
+
+// RUTA PARA ACTUALIZAR PRODUCTOS
+app.put("/productos/:id", (req, res) => {
+    const { id } = req.params;
+    const { name_product, description_product, price_product, img } = req.body;
+
+    if (!name_product || !description_product || !price_product || !img) {
+        return res.status(400).json({ message: "Todos los campos son obligatorios" });
+    }
+
+    const sql_product = `
+        UPDATE productos_tienda
+        SET name_product = ?, description_product = ?, price_product = ?, img = ?
+        WHERE id = ?
+    `;
+
+    db_product.query(sql_product, [name_product, description_product, price_product, img, id], (err, result) => {
+        if (err) {
+            console.log("Error: ", err.message);
+            return res.status(500).json({ message: "Error al actualizar producto" });
+        }
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ message: "Producto no encontrado" });
+        }
+
+        res.json({ message: "Producto actualizado correctamente" });
+    });
+});
+
+// RUTA PARA ELIMINAR PRODUCTOS
+app.delete("/productos/:id", (req, res) => {
+    const { id } = req.params;
+    const sql_product = "DELETE FROM productos_tienda WHERE id = ?";
+
+    db_product.query(sql_product, [id], (err, result) => {
+        if (err) {
+            console.log("Error: ", err.message);
+            return res.status(500).json({ message: "Error al eliminar producto" });
+        }
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ message: "Producto no encontrado" });
+        }
+
+        res.json({ message: "Producto eliminado correctamente" });
+    });
+});
+
 // Iniciar servidor
 app.listen(3000, () => {
     console.log("Servidor en http://localhost:3000 de productos");

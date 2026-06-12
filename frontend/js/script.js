@@ -159,3 +159,166 @@ if (loginForm) {
         });
     });
 }
+
+// Panel de administracion de productos
+const adminProductos = document.getElementById("adminProductos");
+
+if (adminProductos) {
+    const usuario = localStorage.getItem("usuario");
+
+    if (!usuario) {
+        alert("Debes iniciar sesion para entrar al panel de Admin.");
+        window.location.href = "login.html";
+    } else {
+
+    const formProductoAdmin = document.getElementById("formProductoAdmin");
+    const tablaProductosAdmin = document.getElementById("tablaProductosAdmin");
+    const respuestaProducto = document.getElementById("respuestaProducto");
+    const btnGuardarProducto = document.getElementById("btnGuardarProducto");
+    const btnCancelarProducto = document.getElementById("btnCancelarProducto");
+
+    function limpiarFormularioProducto() {
+        formProductoAdmin.reset();
+        document.getElementById("id_producto").value = "";
+        btnGuardarProducto.textContent = "Guardar";
+    }
+
+    function mostrarMensajeProducto(texto, tipo) {
+        respuestaProducto.className = "mt-3 alert alert-" + tipo;
+        respuestaProducto.textContent = texto;
+
+        setTimeout(() => {
+            respuestaProducto.className = "mt-3";
+            respuestaProducto.textContent = "";
+        }, 3000);
+    }
+
+    async function cargarProductosAdmin() {
+        try {
+            const response = await fetch("http://localhost:3000/productos");
+            const productos = await response.json();
+
+            let html = "";
+
+            for (const producto of productos) {
+                html += `
+                    <tr>
+                        <td>${producto.id}</td>
+                        <td>${producto.name_product}</td>
+                        <td>${producto.description_product}</td>
+                        <td>$${producto.price_product}</td>
+                        <td>
+                            <img src="${producto.img}" alt="${producto.name_product}" class="img-admin-producto">
+                            <br>
+                            <small>${producto.img}</small>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-warning btn-sm btn-editar-producto" data-id="${producto.id}">
+                                Editar
+                            </button>
+                            <button type="button" class="btn btn-danger btn-sm btn-eliminar-producto" data-id="${producto.id}">
+                                Eliminar
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }
+
+            tablaProductosAdmin.innerHTML = html;
+
+            document.querySelectorAll(".btn-editar-producto").forEach(boton => {
+                boton.addEventListener("click", function() {
+                    const producto = productos.find(item => item.id == this.dataset.id);
+
+                    document.getElementById("id_producto").value = producto.id;
+                    document.getElementById("name_product").value = producto.name_product;
+                    document.getElementById("description_product").value = producto.description_product;
+                    document.getElementById("price_product").value = producto.price_product;
+                    document.getElementById("img").value = producto.img;
+                    btnGuardarProducto.textContent = "Actualizar";
+                });
+            });
+
+            document.querySelectorAll(".btn-eliminar-producto").forEach(boton => {
+                boton.addEventListener("click", async function() {
+                    const confirmar = confirm("¿Deseas eliminar este producto?");
+
+                    if (!confirmar) {
+                        return;
+                    }
+
+                    try {
+                        const response = await fetch("http://localhost:3000/productos/" + this.dataset.id, {
+                            method: "DELETE"
+                        });
+
+                        const data = await response.json();
+
+                        if (!response.ok) {
+                            mostrarMensajeProducto(data.message, "danger");
+                            return;
+                        }
+
+                        mostrarMensajeProducto(data.message, "success");
+                        cargarProductosAdmin();
+                    } catch (error) {
+                        console.error("Error eliminando producto:", error);
+                        mostrarMensajeProducto("Error al eliminar producto.", "danger");
+                    }
+                });
+            });
+        } catch (error) {
+            console.error("Error cargando productos:", error);
+            mostrarMensajeProducto("Error al cargar el inventario.", "danger");
+        }
+    }
+
+    formProductoAdmin.addEventListener("submit", async function(event) {
+        event.preventDefault();
+
+        const id_producto = document.getElementById("id_producto").value;
+        const producto = {
+            name_product: document.getElementById("name_product").value.trim(),
+            description_product: document.getElementById("description_product").value.trim(),
+            price_product: document.getElementById("price_product").value.trim(),
+            img: document.getElementById("img").value.trim()
+        };
+
+        const url = id_producto
+            ? "http://localhost:3000/productos/" + id_producto
+            : "http://localhost:3000/productos";
+
+        const metodo = id_producto ? "PUT" : "POST";
+
+        try {
+            const response = await fetch(url, {
+                method: metodo,
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(producto)
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                mostrarMensajeProducto(data.message, "danger");
+                return;
+            }
+
+            mostrarMensajeProducto(data.message, "success");
+            limpiarFormularioProducto();
+            cargarProductosAdmin();
+        } catch (error) {
+            console.error("Error guardando producto:", error);
+            mostrarMensajeProducto("Error al guardar producto.", "danger");
+        }
+    });
+
+    btnCancelarProducto.addEventListener("click", function() {
+        limpiarFormularioProducto();
+    });
+
+    cargarProductosAdmin();
+    }
+}
