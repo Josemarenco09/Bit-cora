@@ -13,6 +13,14 @@ h2 {
   color: white !important;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
 
 /* =========================
    NORMALIZACIÓN HTML5
@@ -50,8 +58,10 @@ p {
 }
 
 #section_logo{
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
 }
+
 
 #informacion_contacto{
   text-align: right;
@@ -203,6 +213,39 @@ p {
   transform: translateY(-5px);
   box-shadow: 0 0 20px #00d4ff55;
 }
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.tarjeta{
+  width: 200px;
+  height: 200px;
+
+}
+
+.img_product_html{
+  width: 100px;
+  height: 100px;
+}
+
+#product_catalog{
+}
+
+.box_product_html {
+  border: 2px solid #00d4ff;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #1a1a3e;
+  color: white;
+  min-height: 250px;
+}
+
 
 /* =========================
    PREGUNTAS FRECUENTES
