@@ -1,5 +1,5 @@
 /* =========================
-   TÍTULOS
+    TÍTULOS
 ========================= */
 
 h1 {
@@ -23,7 +23,7 @@ html, body {
 }
 
 /* =========================
-   NORMALIZACIÓN HTML5
+    NORMALIZACIÓN HTML5
 ========================= */
 
 /* header, section, footer, aside, nav, article, hgroup {
@@ -32,7 +32,7 @@ html, body {
 
 
 /* =========================
-   ESTRUCTURA GENERAL
+    ESTRUCTURA GENERAL
 ========================= */
 
 body {
@@ -49,7 +49,7 @@ p {
 }
 
 /* =========================
-   CABECERA
+    CABECERA
 ========================= */
 
 .cabecera {
@@ -82,7 +82,7 @@ p {
 
 
 /* =========================
-   MENÚ
+    MENÚ
 ========================= */
 
 .menu {
@@ -91,8 +91,18 @@ p {
   border-top: 2px solid #00d4ff;  /* línea celeste de separación */
 }
 
+.menu ul {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .menu a {
   color: #ffffff;  /* blanco en vez de negro */
+  text-decoration: none;
 }
 
 .menu a:hover {
@@ -105,9 +115,27 @@ p {
   display: inline-block;
 }
 
+.item-login {
+  margin-left: auto;
+}
+
+.boton-cerrar-sesion {
+  background: transparent;
+  border: 1px solid #00d4ff;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.boton-cerrar-sesion:hover {
+  background: #00d4ff;
+  color: #0b1021;
+}
+
 
 /* =========================
-   HERO BANNER
+    HERO BANNER
 ========================= */
 #image_welcome_page {
   width: 100%;
@@ -153,7 +181,7 @@ p {
 }
 
 /* =========================
-   PRODUCTS INDEX
+    PRODUCTS INDEX
 ========================= */
 
 #previus_products{
@@ -185,7 +213,7 @@ p {
 }
 
 /* =========================
-   TARJETAS
+    TARJETAS
 ========================= */
 
 #container_habilities {
@@ -215,7 +243,7 @@ p {
 }
 
 /* =========================
-   PRODUCTOS
+    PRODUCTOS
 ========================= */
 
 .tarjeta{
@@ -248,7 +276,7 @@ p {
 
 
 /* =========================
-   PREGUNTAS FRECUENTES
+    PREGUNTAS FRECUENTES
 ========================= */
 .seccion_ayuda {
   background-color: white;
@@ -305,7 +333,7 @@ details[open] summary::before {
 }
 
 /* =========================
-   FORMULARIO
+    FORMULARIO
 ========================= */
 
 .seccion{
@@ -324,9 +352,20 @@ details[open] summary::before {
   color: #00b8d9;
 }
 
+/* =========================
+    LOGIN
+========================= */
+
+#seccion_login{
+  padding: 50px;
+  background: #1a1a3e;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
 
 /* =========================
-   PIE DE PÁGINA
+    PIE DE PÁGINA
 ========================= */
 
 .pie {
@@ -334,4 +373,86 @@ details[open] summary::before {
   /* padding: 20px; */
   background: rgb(11, 16, 33);
   color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body{
+    background: #f4f7fb;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+main{
+    min-height: 80vh;
+}
+
+.card-custom{
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.1);
+    padding: 25px;
+}
+
+button,
+.btn-primary{
+    background: #00d4ff;
+    border: none;
+    color: #0b1021;
+    font-weight: bold;
+    transition: .3s;
+}
+
+button:hover,
+.btn-primary:hover{
+    transform: translateY(-2px);
+    background: #00bde4;
+}
+
+input,
+select,
+textarea{
+    border-radius: 10px !important;
+    padding: 10px !important;
+}
+
+.menu{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.box_product:hover,
+.box_product_html:hover,
+.cuadro_index:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(0,212,255,.4);
+}
+
+.menu .boton-cerrar-sesion {
+    background: transparent;
+    border: 1px solid #00d4ff;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.menu .boton-cerrar-sesion:hover {
+    background: #00d4ff;
+    color: #0b1021;
 }

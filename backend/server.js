@@ -55,6 +55,51 @@ app.post("/guardar", (req, res) => {
     });
 });
 
+// RUTA PARA INICIAR SESION
+app.post("/login", (req, res) => {
+
+    const { email_user, password_user } = req.body;
+
+    if (!email_user || !password_user) {
+        return res.status(400).json({
+            success: false,
+            message: "Correo y contraseña son obligatorios"
+        });
+    }
+
+    const sql = `
+        SELECT id_user, email_user, rol_user
+        FROM users
+        WHERE email_user = ? AND password_user = ?
+        LIMIT 1
+    `;
+
+    db.query(sql, [email_user, password_user], (err, result) => {
+        if (err) {
+            console.error("Error SQL login:", err);
+            return res.status(500).json({
+                success: false,
+                message: "Error en el servidor"
+            });
+        }
+
+        if (result.length === 0) {
+            return res.status(401).json({
+                success: false,
+                message: "Correo o contraseña incorrectos"
+            });
+        }
+
+        const usuario = result[0];
+
+        res.json({
+            success: true,
+            message: "Inicio de sesión correcto",
+            usuario: usuario
+        });
+    });
+});
+
 const db_product = mysql.createPool({
     host: '127.0.0.1',
     user: 'root',
@@ -67,8 +112,8 @@ app.get("/productos", (req, res) => {
 
     db_product.query(sql_product, (err, result) => {
         if (err) {
-            console.log("Error: ", error.message)
-            return
+            console.log("Error: ", err.message)
+            return res.status(500).json({ message: "Error al consultar productos" });
         }
         res.json(result)
     })
