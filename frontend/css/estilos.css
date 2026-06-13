@@ -415,6 +415,43 @@ main{
     padding: 25px;
 }
 
+.titulo-principal {
+    color: #0b1021 !important;
+    font-size: 34px !important;
+    font-weight: 800;
+}
+
+.texto-destacado {
+    color: #1a1a3e;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.titulo-card {
+    color: #0b1021 !important;
+    font-size: 22px !important;
+    font-weight: 700;
+}
+
+.imagen-principal {
+    width: 100%;
+    max-height: 360px;
+    object-fit: contain;
+}
+
+.ayuda-panel {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.ayuda-panel .cuadro_pregunta summary {
+    border-radius: 10px 10px 0 0;
+}
+
+.ayuda-panel .texto_ayuda {
+    border-radius: 0 0 10px 10px;
+}
+
 button,
 .btn-primary{
     background: #00d4ff;

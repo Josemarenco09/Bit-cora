@@ -86,9 +86,6 @@
   <text x="192" y="185" style="fill:rgb(0, 212, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial, sans-serif;font-size:20px;font-weight:400;text-anchor:start;dominant-baseline:auto">Tu tienda de tecnología</text>
   <text x="192" y="210" style="fill:rgb(170, 170, 204);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial, sans-serif;font-size:15px;font-weight:300;text-anchor:start;dominant-baseline:auto">Encuentra los mejores productos tech para tu hogar</text>
 
-  <!-- Botón decorativo -->
-  <rect x="192" y="230" width="140" height="36" rx="18" style="fill:rgb(0, 212, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-  <text x="262" y="253" text-anchor="middle" style="fill:rgb(11, 16, 33);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial, sans-serif;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:auto">Ver productos</text>
 
   <!-- Línea inferior decorativa -->
   <rect x="0" y="310" width="680" height="2" fill="#00d4ff" opacity="0.3" style="fill:rgb(0, 212, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.3;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
